@@ -1,0 +1,113 @@
+Overview
+
+This document describes how to set up the local development environment, build the project, and verify that the application is running successfully.
+
+Prerequisites
+
+Install the following tools before starting:
+
+ Git
+
+Verify installation:
+
+  bash
+git --version
+
+
+Expected output:
+
+text
+git version 2.x.x
+
+Docker
+
+Verify installation:
+
+bash
+docker --version
+docker compose version
+
+
+Expected output:
+
+Docker version xx.x.x
+Docker Compose version xx.x.x
+
+
+Maven 
+
+Verify installation:
+
+bash
+mvn --version
+```
+
+Expected output:
+
+Apache Maven 3.x.x
+```
+
+
+# Clone the Repository
+
+Clone the source code from the remote repository:
+
+
+git clone <repository-url>
+cd <repository-name>
+
+
+Verify repository contents:
+
+bash
+ls
+```
+
+Expected files:
+
+```text
+README.md
+pom.xml
+src/
+docker-compose.yml
+.env.example
+
+
+
+# Configure Environment Variables
+
+Copy the sample environment file:
+
+bash
+cp .env.example .env
+
+
+##Important
+
+* Never commit `.env` files to Git.
+* Store secrets outside source code.
+* Ensure `.env` is included in `.gitignore`.
+
+Example:
+
+bash
+echo ".env" >> .gitignore
+
+
+## Build the Application
+ Maven Project
+
+Build and download dependencies:
+
+bash
+mvn clean install
+
+Expected output:
+
+application.jar
+
+
+
+Run the Application
+ 
+
